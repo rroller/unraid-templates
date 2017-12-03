@@ -15,7 +15,7 @@
   </Description>
   <Privileged>false</Privileged>
   <Overview/>
-  <WebUI>http://[IP]:[PORT:5050]/admin</WebUI>
+  <WebUI>http://[IP]:[PORT:5050]/</WebUI>
   <TemplateURL/>
   <Icon>http://i.imgur.com/N4wDUnJ.png</Icon>
   <ExtraParams/>
