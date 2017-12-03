@@ -13,16 +13,6 @@
     PostgreSQL Tools[br][br]
     pgAdmin is the most popular and feature rich Open Source administration and development platform for PostgreSQL, the most advanced Open Source database in the world.
   </Description>
-  <Networking>
-    <Mode>bridge</Mode>
-    <Publish>
-      <Port>
-        <HostPort>5050</HostPort>
-        <ContainerPort>5050</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-    </Publish>
-  </Networking>
   <Privileged>false</Privileged>
   <Overview/>
   <WebUI>http://[IP]:[PORT:5050]/admin</WebUI>
