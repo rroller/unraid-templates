@@ -21,14 +21,13 @@
   <ExtraParams/>
   <Config 
     Type="Port" 
-    Name="pgAdmin port" 
+    Name="Host Port 1" 
     Target="5050" 
     Default="5050" 
     Mode="tcp" 
     Description="This is pgAdmin4 Web UI Port." 
     Display="always" 
-    Required="true">5050
-  </Config>
+    Required="true">5050</Config>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
