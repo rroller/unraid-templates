@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>pgAdmin</Name>
+  <Name>pgAdmin4</Name>
   <Repository>fenglc/pgadmin4</Repository>
   <Beta>False</Beta>
   <Category>Tools:</Category>
   <Date>2017-12-03</Date>
-  <Registry/>
+  <Registry>https://hub.docker.com/r/fenglc/pgadmin4/</Registry>
   <Project>https://www.pgadmin.org/</Project>
   <Support>https://lime-technology.com/forum/index.php?topic=TODO</Support>
   <GitHub>https://github.com/rroller/unraid-templates</GitHub>
