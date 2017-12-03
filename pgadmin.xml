@@ -28,6 +28,7 @@
     Description="This is pgAdmin4 Web UI Port." 
     Display="always" 
     Required="true">5050</Config>
+  <Network>bridge</Network>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
