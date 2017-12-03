@@ -19,15 +19,18 @@
   <TemplateURL/>
   <Icon>http://i.imgur.com/N4wDUnJ.png</Icon>
   <ExtraParams/>
+  <Config 
+    Type="Port" 
+    Name="pgAdmin port" 
+    Target="5050" 
+    Default="5050" 
+    Mode="tcp" 
+    Description="This is pgAdmin4 Web UI Port." 
+    Display="always" 
+    Required="true">5050
+  </Config>
   <Networking>
     <Mode>bridge</Mode>
-    <Publish>
-      <Port>
-        <HostPort>5050</HostPort>
-        <ContainerPort>5050</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-    </Publish>
   </Networking>
   <Data/>
   <Environment/>
