@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Container>
+<Container version="2">
   <Name>pgAdmin</Name>
   <Repository>fenglc/pgadmin4</Repository>
   <Beta>False</Beta>
