@@ -17,7 +17,7 @@ See https://github.com/skibish/ddns/blob/master/README.md on how to configure th
   <TemplateURL/>
   <Icon>https://i.imgur.com/NFr4J1k.png</Icon>
   <ExtraParams/>
-  <PostArgs/>
+  <PostArgs>-conf-file /config/.ddns.yml</PostArgs>
   <CPUset/>
   <DonateText/>
   <DonateLink/>
