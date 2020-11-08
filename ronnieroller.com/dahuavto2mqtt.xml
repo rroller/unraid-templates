@@ -65,7 +65,7 @@ For integration with Home Assistant see https://community.home-assistant.io/t/da
       <Mode/>
     </Variable>
     <Variable>
-      <Value>MQTT optional password</Value>
+      <Value/>
       <Name>MQTT_BROKER_PASSWORD</Name>
       <Mode/>
     </Variable>
@@ -82,6 +82,6 @@ For integration with Home Assistant see https://community.home-assistant.io/t/da
   <Config Name="MQTT_BROKER_HOST" Target="MQTT_BROKER_HOST" Default="192.168.1.2" Mode="" Description="MQTT broker address" Type="Variable" Display="always" Required="true" Mask="false">192.168.1.2</Config>
   <Config Name="MQTT_BROKER_PORT" Target="MQTT_BROKER_PORT" Default="1883" Mode="" Description="MQTT broker port" Type="Variable" Display="always" Required="true" Mask="false">1883</Config>
   <Config Name="MQTT_BROKER_USERNAME" Target="MQTT_BROKER_USERNAME" Default="" Mode="" Description="MQTT optional username" Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="MQTT_BROKER_PASSWORD" Target="MQTT_BROKER_PASSWORD" Default="MQTT optional password" Mode="" Description="Container Variable: MQTT_BROKER_PASSWORD" Type="Variable" Display="always" Required="false" Mask="true">MQTT optional password</Config>
+  <Config Name="MQTT_BROKER_PASSWORD" Target="MQTT_BROKER_PASSWORD" Default="" Mode="" Description="MQTT optional password" Type="Variable" Display="always" Required="false" Mask="true">MQTT optional password</Config>
   <Config Name="MQTT_BROKER_TOPIC_PREFIX" Target="MQTT_BROKER_TOPIC_PREFIX" Default="DahuaVTO" Mode="" Description="The MQTT topic prefix" Type="Variable" Display="always" Required="false" Mask="false">DahuaVTO</Config>
 </Container>
