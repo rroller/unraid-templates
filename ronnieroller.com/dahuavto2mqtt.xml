@@ -11,7 +11,10 @@
   <Project>https://github.com/elad-bar/DahuaVTO2MQTT</Project>
   <Overview>Listens to events from Dahua VTO unit and publishes them via MQTT Message&#xD;
 &#xD;
-For integration with Home Assistant see https://community.home-assistant.io/t/dahua-vto-to-mqtt-broker/169781</Overview>
+&#xD;
+For integration with Home Assistant see https://community.home-assistant.io/t/dahua-vto-to-mqtt-broker/169781&#xD;
+&#xD;
+Source: https://github.com/elad-bar/DahuaVTO2MQTT</Overview>
   <Category>HomeAutomation:</Category>
   <WebUI/>
   <TemplateURL/>
