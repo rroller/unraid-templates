@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Deepstack</Name>
+  <Repository>deepquestai/deepstack</Repository>
+  <Registry>https://hub.docker.com/r/deepquestai/deepstack</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://deepstack.cc</Project>
+  <Overview>Before you get started, you will need to activate the Deepstack API. First, go to www.deepstack.cc and sign up for an account. Choose the basic plan which will give us unlimited access for one installation. You will then see an activation key in your portal.&#xD;
+&#xD;
+On your machine with docker, run Deepstack (noavx mode) without any recognition so you can activate the API on port 5000:&#xD;
+&#xD;
+docker run -v localstorage:/datastore -p 5000:5000 deepquestai/deepstack:noavx&#xD;
+Now go to http://YOUR_SERVER_IP_ADDRESS:5000/ on another computer or the same one running Deepstack. Input your activation key from your portal into the text box below "Enter New Activation Key" and press enter. Now stop your docker container, and restart and run Deepstack (noavx mode) with the object detection service active on port 5000:&#xD;
+&#xD;
+docker run -e VISION-DETECTION=True -e API-KEY="mysecretkey" -v localstorage:/datastore -p 5000:5000 --name deepstack deepquestai/deepstack:noavx&#xD;
+You can test the endpoint is active using curl, from within a directory containing an image test.jpg:&#xD;
+&#xD;
+curl -X POST -F image=@couple.jpg 'http://localhost:5000/v1/vision/detection'&#xD;
+&#xD;
+See https://github.com/robmarkcole/HASS-Deepstack-object</Overview>
+  <Category>Tools:</Category>
+  <WebUI>http://[IP]:[PORT:5000]</WebUI>
+  <TemplateURL/>
+  <Icon>https://i.imgur.com/s6mUOKK.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1605819656</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>I didnt need to, but if you want, go to www.deepstack.cc and sign up for an account. Choose the basic plan which will give us unlimited access for one installation. You will then see an activation key in your portal.&#xD;
+&#xD;
+On your machine with docker, run Deepstack without any recognition so you can activate the API on port 5000:&#xD;
+&#xD;
+Add the docker variable API-KEY="mysecretkey" if you want to use an API key.
+&#xD;
+curl -X POST -F image=@couple.jpg 'http://localhost:5000/v1/vision/detection'&#xD;
+&#xD;
+See https://github.com/robmarkcole/HASS-Deepstack-object</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>5000</HostPort>
+        <ContainerPort>5000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/deepstack</HostDir>
+      <ContainerDir>/datastore</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>True</Value>
+      <Name>VISION-DETECTION</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Webui" Target="5000" Default="5000" Mode="tcp" Description="For access to the Web UI and API" Type="Port" Display="always" Required="true" Mask="false">5000</Config>
+  <Config Name="datastore path" Target="/datastore" Default="" Mode="rw" Description="Container Path: /datastore" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/deepstack</Config>
+  <Config Name="VISION-DETECTION" Target="VISION-DETECTION" Default="" Mode="" Description="Container Variable: VISION-DETECTION" Type="Variable" Display="always" Required="false" Mask="false">True</Config>
+</Container>
