@@ -11,7 +11,7 @@
   <Overview>Liquid-dl is a simple tool for utlities such as FFMPEG, youtube-dl, and scdl. It provides a simple framework with simple point and click options allowing users&#xD;
 to just click on what they need and use the bare minimum commands to get the results needed.</Overview>
   <Category>Downloaders:</Category>
-  <WebUI>http://[IP]:[PORT:8734]/</WebUI>
+  <WebUI>http://[IP]:[PORT:8000]/</WebUI>
   <TemplateURL/>
   <Icon>https://i.imgur.com/9UXxDSr.png</Icon>
   <ExtraParams/>
