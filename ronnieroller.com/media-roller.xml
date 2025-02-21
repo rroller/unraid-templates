@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>media-roller</Name>
-  <Repository>ronnieroller/media-roller</Repository>
-  <Registry>https://hub.docker.com/repository/docker/ronnieroller/media-roller</Registry>
+  <Repository>ghcr.io/rroller/media-roller:master</Repository>
+  <Registry>https://github.com/rroller/media-roller/pkgs/container/media-roller</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
