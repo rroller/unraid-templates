@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>ddns</Name>
-  <Repository>ronnieroller/ddns</Repository>
-  <Registry>https://hub.docker.com/r/ronnieroller/ddns</Registry>
+  <Repository>ghcr.io/rroller/ddns/ddns:latest</Repository>
+  <Registry>https://ghcr.io/rroller/ddns/ddns:latest</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
