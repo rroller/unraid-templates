@@ -53,4 +53,5 @@ curl -X POST --data-urlencode "url={{url}}" http://{{address}}:{{port}}/youtube-
   <Labels/>
   <Config Name="port" Target="8080" Default="" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="false" Mask="false">8080</Config>
   <Config Name="Download" Target="/youtube-dl" Default="" Mode="rw" Description="Container Path: /youtube-dl" Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="Proxy URL" Target="YDL_PROXY" Default="" Mode="" Description="Optional existing HTTP proxy for yt-dlp outbound requests and downloads. Example: http://UNRAID-IP:8118 (replace UNRAID-IP with your server IP). Binhex VPN containers can provide Privoxy on port 8118 when enabled; publish that port and allow this container to access the proxy. This setting does not create or manage a VPN. Leave blank to preserve existing behavior. Keep the normal bridge network and WebUI port mapping; sharing the VPN container network namespace is unnecessary. Requires an image version supporting YDL_PROXY." Type="Variable" Display="advanced" Required="false" Mask="false"/>
 </Container>
