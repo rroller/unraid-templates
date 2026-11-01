@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>caddy-cloudflare</Name>
+  <Repository>ghcr.io/rroller/caddy-cloudflare:2</Repository>
+  <Registry>https://github.com/rroller/caddy-cloudflare/pkgs/container/caddy-cloudflare</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/rroller/caddy-cloudflare/issues</Support>
+  <Project>https://github.com/rroller/caddy-cloudflare</Project>
+  <Overview>Caddy reverse proxy with the Cloudflare DNS module, built automatically from official Caddy images. Uses ghcr.io/rroller/caddy-cloudflare:2 for normal Unraid image updates.
+
+Before starting, create /mnt/user/appdata/caddy-cloudflare/Caddyfile as a regular file and add your Caddy configuration. For Cloudflare DNS challenges, set the masked CLOUDFLARE_API_TOKEN field and reference {env.CLOUDFLARE_API_TOKEN} in the Caddyfile. Use a token restricted to the required DNS zone with Zone Read and DNS Edit permissions.
+
+Keep the /data and /config paths persistent. No custom Caddy executable mount is needed. There is no administration web UI; visit the hostnames configured in your Caddyfile.
+
+Bridge mode defaults to host ports 8080 and 8443 to avoid Unraid management ports. If using standard external ports, forward TCP 80 to the configured HTTP host port and TCP 443 to the configured HTTPS host port; HTTP/3 additionally uses UDP 443. Alternatively assign a dedicated container IP and use ports 80 and 443. Adjust ports for your network; port mappings do not open router firewall rules.</Overview>
+  <Description>Caddy reverse proxy with the Cloudflare DNS module, built automatically from official Caddy images. Uses ghcr.io/rroller/caddy-cloudflare:2 for normal Unraid image updates.
+
+Before starting, create /mnt/user/appdata/caddy-cloudflare/Caddyfile as a regular file and add your Caddy configuration. For Cloudflare DNS challenges, set the masked CLOUDFLARE_API_TOKEN field and reference {env.CLOUDFLARE_API_TOKEN} in the Caddyfile. Use a token restricted to the required DNS zone with Zone Read and DNS Edit permissions.
+
+Keep the /data and /config paths persistent. No custom Caddy executable mount is needed. There is no administration web UI; visit the hostnames configured in your Caddyfile.
+
+Bridge mode defaults to host ports 8080 and 8443 to avoid Unraid management ports. If using standard external ports, forward TCP 80 to the configured HTTP host port and TCP 443 to the configured HTTPS host port; HTTP/3 additionally uses UDP 443. Alternatively assign a dedicated container IP and use ports 80 and 443. Adjust ports for your network; port mappings do not open router firewall rules.</Description>
+  <Category>Network:Proxy</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/rroller/unraid-templates/master/ronnieroller.com/caddy-cloudflare.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/docker-library/docs/master/caddy/logo.png</Icon>
+  <ExtraParams>--log-opt max-size=10m --log-opt max-file=3</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Config Name="HTTP Port" Target="80" Default="8080" Mode="tcp" Description="HTTP listener and redirects. Defaults to 8080 to avoid Unraid management ports." Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+  <Config Name="HTTPS Port" Target="443" Default="8443" Mode="tcp" Description="HTTPS listener. Defaults to 8443 to avoid Unraid management ports." Type="Port" Display="always" Required="true" Mask="false">8443</Config>
+  <Config Name="HTTP/3 Port" Target="443" Default="8443" Mode="udp" Description="Optional HTTP/3 listener. Use the same host port as HTTPS." Type="Port" Display="advanced" Required="false" Mask="false">8443</Config>
+  <Config Name="Caddyfile" Target="/etc/caddy/Caddyfile" Default="/mnt/user/appdata/caddy-cloudflare/Caddyfile" Mode="ro" Description="Create this regular file before starting. Contains your Caddy configuration. Mounted read-only; edit it on the host." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/caddy-cloudflare/Caddyfile</Config>
+  <Config Name="Certificate Data" Target="/data" Default="/mnt/user/appdata/caddy-cloudflare/data" Mode="rw" Description="Persistent certificates, private keys and ACME account data. Back up and keep private." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/caddy-cloudflare/data</Config>
+  <Config Name="Caddy State" Target="/config" Default="/mnt/user/appdata/caddy-cloudflare/config" Mode="rw" Description="Persistent Caddy configuration state." Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/caddy-cloudflare/config</Config>
+  <Config Name="Cloudflare API Token" Target="CLOUDFLARE_API_TOKEN" Default="" Mode="" Description="Required when using Cloudflare DNS challenges. Use a scoped token with Zone Read and DNS Edit permissions for your domain. Refer to it as {env.CLOUDFLARE_API_TOKEN} in the Caddyfile." Type="Variable" Display="always" Required="false" Mask="true"/>
+</Container>
