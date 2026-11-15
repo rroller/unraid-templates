@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>homewiki</Name>
+  <Repository>ghcr.io/rroller/homewiki:latest</Repository>
+  <Registry>https://github.com/rroller/homewiki/pkgs/container/homewiki</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/rroller/homewiki/issues</Support>
+  <Project>https://github.com/rroller/homewiki</Project>
+  <ReadMe>https://github.com/rroller/homewiki/blob/main/UNRAID.md</ReadMe>
+  <Overview>Homewiki is a lightweight personal wiki backed by ordinary Markdown files in nested folders, without a database. Includes Markdown editing and preview, internal page links, search, browser draft recovery, conflict detection, recoverable trash, last-edit dates, and a Recently edited view.
+
+Before starting, set Allowed hosts to the Unraid server's LAN IP or hostname, without a scheme or port. Multiple exact hosts may be comma-separated. This setting is required for LAN access; localhost remains allowed automatically.
+
+Keep /data persistent. The default path /mnt/user/appdata/homewiki/data matches the source-based deployment. For a fresh install, create it on Unraid with: install -d -m 0700 -o 10001 -g 10001 /mnt/user/appdata/homewiki/data. Existing data must be writable by UID/GID 10001; preserve its ownership. Reuse an existing wiki data folder when migrating, and do not run two containers against the same data.
+
+The host port defaults to 18080. Use WebUI to open Homewiki after startup. This app has no login system: anyone who can reach it can read and edit pages. Keep it on a trusted private network and do not forward its port to the internet. Back up the complete data folder, including hidden trash files, with the app stopped. Personal Markdown files stay in appdata, outside Git and the container image.</Overview>
+  <Category>Productivity: Tools:</Category>
+  <WebUI>http://[IP]:[PORT:8080]/page/Home</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/rroller/unraid-templates/master/ronnieroller.com/homewiki.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/rroller/unraid-templates/master/ronnieroller.com/icons/homewiki.png</Icon>
+  <ExtraParams>--read-only --tmpfs /tmp:rw,noexec,nosuid,size=16m --cap-drop=ALL --security-opt=no-new-privileges:true --log-opt max-size=10m --log-opt max-file=3</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Config Name="Web port" Target="8080" Default="18080" Mode="tcp" Description="Host port for Homewiki. Change if another container uses 18080. Container port remains 8080." Type="Port" Display="always" Required="true" Mask="false">18080</Config>
+  <Config Name="Wiki data" Target="/data" Default="/mnt/user/appdata/homewiki/data" Mode="rw" Description="Persistent Markdown pages, trash and state. Back up this complete folder. Must be writable by UID/GID 10001. Reuse your existing data folder when migrating." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/homewiki/data</Config>
+  <Config Name="Allowed hosts" Target="HOMEWIKI_ALLOWED_HOSTS" Default="" Mode="" Description="Required for LAN access: enter your Unraid LAN IP or hostname, without http:// or a port. Comma-separate multiple exact hosts. Localhost is always allowed; wildcards are not supported." Type="Variable" Display="always" Required="true" Mask="false"/>
+</Container>
