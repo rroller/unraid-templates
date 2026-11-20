@@ -9,10 +9,9 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/rroller/homewiki/issues</Support>
   <Project>https://github.com/rroller/homewiki</Project>
-  <ReadMe>https://github.com/rroller/homewiki/blob/main/UNRAID.md</ReadMe>
-  <Overview>Homewiki is a lightweight personal wiki backed by ordinary Markdown files in nested folders, without a database. Includes Markdown editing and preview, internal page links, search, browser draft recovery, conflict detection, recoverable trash, last-edit dates, and a Recently edited view.
+  <ReadMe>https://github.com/rroller/homewiki/blob/main/README.md</ReadMe>
+  <Overview>Homewiki is a lightweight personal wiki backed by ordinary Markdown files in nested folders, without a database and a bookmark manager managed by sqlite. Includes Markdown editing and preview, internal page links, search, browser draft recovery, conflict detection, recoverable trash, last-edit dates, and a Recently edited view.
 
-Before starting, set Allowed hosts to the Unraid server's LAN IP or hostname, without a scheme or port. Multiple exact hosts may be comma-separated. This setting is required for LAN access; localhost remains allowed automatically.
 
 Keep /data persistent. The default path /mnt/user/appdata/homewiki/data matches the source-based deployment. For a fresh install, create it on Unraid with: install -d -m 0700 -o 10001 -g 10001 /mnt/user/appdata/homewiki/data. Existing data must be writable by UID/GID 10001; preserve its ownership. Reuse an existing wiki data folder when migrating, and do not run two containers against the same data.
 
